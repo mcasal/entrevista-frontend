@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand"
+           [routerLink]="['/home']">
+            <img src="https://e7.pngegg.com/pngimages/191/778/png-clipart-logo-star-wars-brand-star-wars-logo-text-logo.png"
+                 height="30"
+                 alt="">
+        </a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link"
+                       [routerLink]="['/starships']">Starships</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled"
+                       [routerLink]="['/characters']"
+                       tabindex="-1"
+                       aria-disabled="true">Characters</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
