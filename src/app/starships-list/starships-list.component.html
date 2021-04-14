@@ -1,6 +1,7 @@
-<app-navbar></app-navbar>
-<p>Starships list</p>
-<ul class="list-group">
-    <li class="list-group-item"
-        *ngFor="let starship of starships">{{starship.name}}</li>
-</ul>
+<section>
+    <h3 class="text-center font-weight-bold my-5">All the starships</h3>
+    <ul class="list-group w-50 mx-auto">
+        <li class="list-group-item"
+            *ngFor="let starship of starships">{{starship.name}}</li>
+    </ul>
+</section>

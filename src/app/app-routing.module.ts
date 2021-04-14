@@ -8,6 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { StarshipsListComponent } from './starships-list/starships-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'landing' },
@@ -18,9 +19,14 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent }
     ]
   },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'starships', component: StarshipsListComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: 'landing' }
+  {
+    path: 'home', component: HomeComponent, canActivate: [AuthGuard], children: [
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'starships', component: StarshipsListComponent }
+    ]
+  },
+  { path: '**', redirectTo: 'landing', pathMatch: 'full' }
 ];
 
 @NgModule({
