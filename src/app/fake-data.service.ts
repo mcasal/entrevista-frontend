@@ -33,15 +33,22 @@ export class FakeDataService {
     ];
   }
 
-  getAll() {
-    return this.users;
-  }
-
   createUser(user: User) {
-    return this.users.push(user);
+    //this.users.push(user);
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    //console.log(user);
   }
 
-  isAuth(i: number): boolean {
-    return this.users[i].active;
+  isAuth(): boolean {
+    let user = JSON.parse(localStorage.getItem('currentUser'));
+    if (user.active) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
   }
 }

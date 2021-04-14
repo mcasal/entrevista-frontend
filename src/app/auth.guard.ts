@@ -7,13 +7,9 @@ import { FakeDataService } from './fake-data.service';
 })
 export class AuthGuard implements CanActivate {
 
-  i: number = 1;
-
   constructor(private auth: FakeDataService) { }
 
   canActivate(): boolean {
-    console.log('Guard');
-    return this.auth.isAuth(this.i);
+    return this.auth.isAuth();
   }
-
 }

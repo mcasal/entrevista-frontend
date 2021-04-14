@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FakeDataService } from '../fake-data.service';
 import { User } from '../models/user.model';
 
@@ -13,13 +14,13 @@ export class LandingComponent implements OnInit {
   new_user: User;
 
   registerForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    lastName: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9·-]+.[a-z]{2,4}$')]],
-    password: ['', [Validators.required, Validators.minLength(3)]],
+    name: ['Lasd', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
+    lastName: ['Kasd', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
+    email: ['sda@ssdf.es', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9·-]+.[a-z]{2,4}$')]],
+    password: ['123abc', [Validators.required, Validators.minLength(3)]]
   })
 
-  constructor(private fb: FormBuilder, private fakeData: FakeDataService) { }
+  constructor(private fb: FormBuilder, private fakeData: FakeDataService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class LandingComponent implements OnInit {
   onSubmit() {
     this.new_user = new User(this.registerForm.value);
     this.fakeData.createUser(this.new_user);
+    //console.log(this.new_user);
+    this.router.navigate(['/home']);
   }
-
 }

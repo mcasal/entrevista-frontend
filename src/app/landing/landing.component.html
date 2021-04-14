@@ -20,7 +20,6 @@
                                 <div class="form-group col-6">
                                     <label>First name</label>
                                     <input type="text"
-                                           id="id_name"
                                            class="form-control"
                                            formControlName="name"
                                            [ngClass]="{'is-invalid':isValidInput('name')}">
@@ -44,7 +43,7 @@
                                 </div>
                                 <div class="invalid-feedback">
                                     <span *ngIf="registerForm.get('lastName')?.errors?.required">
-                                        Your name is required
+                                        Your last name is required
                                     </span>
                                     <span *ngIf="registerForm.get('lastName')?.errors?.minlength">
                                         Minimum {{registerForm.get('lastName')?.errors?.minlength.requiredLength}}
@@ -62,11 +61,10 @@
                             </div>
                             <div class="invalid-feedback">
                                 <span *ngIf="registerForm.get('email')?.errors?.required">
-                                    Your name is required
+                                    Your email is required
                                 </span>
-                                <span *ngIf="registerForm.get('email')?.errors?.minlength">
-                                    Minimum {{registerForm.get('email')?.errors?.minlength.requiredLength}} characters
-                                    required
+                                <span *ngIf="registerForm.get('inputEmail')?.errors?.pattern">
+                                    Email format is invalid
                                 </span>
                             </div>
                             <div class="form-group">
@@ -79,11 +77,10 @@
                             </div>
                             <div class="invalid-feedback">
                                 <span *ngIf="registerForm.get('password')?.errors?.required">
-                                    Your name is required
+                                    Password is required
                                 </span>
-                                <span *ngIf="registerForm.get('password')?.errors?.minlength">
-                                    Minimum {{registerForm.get('password')?.errors?.minlength.requiredLength}}
-                                    characters required
+                                <span *ngIf="registerForm.get('password')?.errors?.checkPassStrength">
+                                    {{registerForm.get('password').errors.checkPassStrength}}
                                 </span>
                             </div>
                             <button type="submit"
