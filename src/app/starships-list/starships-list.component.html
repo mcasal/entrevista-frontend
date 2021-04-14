@@ -1,27 +1,29 @@
 <section>
-    <h3 class="text-center font-weight-bold my-5">All the starships</h3>
-    <table class="table table-striped table-bordered table-dark">
-        <thead>
-            <tr class="text-warning">
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Model</th>
-                <th scope="col">Manufacturer</th>
-                <th scope="col">Starship class</th>
-                <th scope="col">Crew</th>
-                <th scope="col">Passengers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let starship of starships; let i = index">
-                <td class="text-warning">{{i+1}}</td>
-                <td>{{starship.name}}</td>
-                <td>{{starship.model}}</td>
-                <td>{{starship.manufacturer}}</td>
-                <td>{{starship.starship_class}}</td>
-                <td>{{starship.crew}}</td>
-                <td>{{starship.passengers}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h3 class="text-center text-light font-weight-bold my-5">All the starships</h3>
+    <div class="table-responsive-md">
+        <table class="table table-striped table-bordered table-dark">
+            <thead>
+                <tr class="text-warning">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Starship class</th>
+                    <th scope="col">Crew</th>
+                    <th scope="col">Passengers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let starship of starships; let i = index">
+                    <td class="text-warning">{{i+1}}</td>
+                    <td>{{starship.name}}</td>
+                    <td>{{starship.model}}</td>
+                    <td>{{starship.manufacturer}}</td>
+                    <td>{{starship.starship_class}}</td>
+                    <td>{{starship.crew}}</td>
+                    <td>{{starship.passengers}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
