@@ -40,7 +40,6 @@ export class FakeDataService {
 
   getUser() {
     let user = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(user);
     return user
   }
 

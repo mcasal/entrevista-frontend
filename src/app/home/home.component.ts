@@ -18,6 +18,5 @@ export class HomeComponent implements OnInit {
 
   getUser() {
     this.user = this.fakeData.getUser();
-    console.log(this.user);
   }
 }
