@@ -36,7 +36,12 @@ export class FakeDataService {
   createUser(user: User) {
     //this.users.push(user);
     localStorage.setItem('currentUser', JSON.stringify(user));
-    //console.log(user);
+  }
+
+  getUser() {
+    let user = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(user);
+    return user
   }
 
   isAuth(): boolean {
