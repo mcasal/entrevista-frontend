@@ -12,12 +12,13 @@ import { User } from '../models/user.model';
 export class LandingComponent implements OnInit {
 
   new_user: User;
+  passRegex = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{4,}$';
 
   registerForm: FormGroup = this.fb.group({
-    name: ['Lasd', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
-    lastName: ['Kasd', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
-    email: ['sda@ssdf.es', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9·-]+.[a-z]{2,4}$')]],
-    password: ['123abc', [Validators.required, Validators.minLength(3)]]
+    name: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
+    lastName: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
+    email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9·-]+.[a-z]{2,4}$')]],
+    password: ['', [Validators.required, Validators.pattern(this.passRegex)]]
   })
 
   constructor(private fb: FormBuilder, private fakeData: FakeDataService, private router: Router) { }
