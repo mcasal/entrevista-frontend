@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FakeDataService } from '../fake-data.service';
 
 @Component({
@@ -9,14 +8,13 @@ import { FakeDataService } from '../fake-data.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private fakeData: FakeDataService, private router: Router) { }
+  constructor(private fakeData: FakeDataService) { }
 
   ngOnInit(): void {
   }
 
   logoutUser() {
     this.fakeData.logout();
-    this.router.navigate(['/landing']);
   }
 
 }

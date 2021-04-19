@@ -10,8 +10,12 @@ import { SwapiService } from '../swapi.service';
 export class StarshipsListComponent implements OnInit {
 
   starships: Starship[] = [];
+  currentPage: number;
+  numStarships: number;
 
-  constructor(private swapiService: SwapiService) { }
+  constructor(private swapiService: SwapiService) {
+    this.currentPage = 1;
+  }
 
   ngOnInit(): void {
     this.getAllStarships();
@@ -19,11 +23,20 @@ export class StarshipsListComponent implements OnInit {
 
   getAllStarships() {
     this.swapiService.getAllStarships()
-      .subscribe((res: any) => {
-        this.starships = res.results;
-      }, error => {
-        console.log(error);
-      });
+      .then(response => {
+        this.starships = response.results;
+        this.numStarships = response.count;
+      })
+  }
+
+  async onChangePage(page: boolean) {
+    if (page) {
+      this.currentPage++;
+    } else {
+      this.currentPage--;
+    }
+    const response = await this.swapiService.getAllStarships(this.currentPage);
+    this.starships = response.results;
   }
 
 }

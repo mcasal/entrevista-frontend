@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
-//import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { User } from './models/user.model';
 
 @Injectable({
@@ -10,7 +9,7 @@ export class FakeDataService {
 
   users: User[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.users = [
       {
         username: 'Carlos Rodriguez',
@@ -54,5 +53,6 @@ export class FakeDataService {
 
   logout() {
     localStorage.removeItem('currentUser');
+    this.router.navigate(['/landing']);
   }
 }

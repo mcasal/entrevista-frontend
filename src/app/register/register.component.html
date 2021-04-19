@@ -25,7 +25,7 @@
                             characters required
                         </span>
                         <span *ngIf="registerForm.get('name')?.errors?.pattern">
-                            Only letters are allowed
+                            Numbers are not allowed
                         </span>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                             characters required
                         </span>
                         <span *ngIf="registerForm.get('lastName')?.errors?.pattern">
-                            Only letters are allowed
+                            Numbers are not allowed
                         </span>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         Password is required
                     </span>
                     <span *ngIf="registerForm.get('password')?.errors?.pattern">
-                        Requires 4 characters minimum with at least one uppercase, one lowercase and a
+                        Requires 8 characters minimum with at least one uppercase, one lowercase and a
                         number.
                     </span>
                 </div>

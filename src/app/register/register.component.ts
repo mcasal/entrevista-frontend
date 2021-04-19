@@ -12,11 +12,11 @@ import { User } from '../models/user.model';
 export class RegisterComponent implements OnInit {
 
   new_user: User;
-  passRegex = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{4,}$';
+  passRegex = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
 
   registerForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
-    lastName: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z]+$')]],
+    name: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[^0-9]+$')]],
+    lastName: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[^0-9]+$')]],
     email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9·-]+.[a-z]{2,4}$')]],
     password: ['', [Validators.required, Validators.pattern(this.passRegex)]]
   });
