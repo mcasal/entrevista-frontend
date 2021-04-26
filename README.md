@@ -7,6 +7,7 @@ Esta app ha sido generada con [Angular CLI](https://github.com/angular/angular-c
 * 🔑 Login/Registro
 * ✔️ Validaciones
 * 👾 Información de las naves
+* ✋ Creación de guards
 
 
 ## Lenguajes, librerías y herramientas
