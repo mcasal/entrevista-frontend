@@ -1,6 +1,6 @@
 # Star Wars APP con Angular
 
-Esta app ha sido generada con [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.4 y consume la API [The Star Wars API](https://swapi.dev/ "title" target="_blank") para mostrar información sobre las naves.
+Esta app ha sido generada con [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.4 y consume la API [The Star Wars API](https://swapi.dev/) para mostrar información sobre las naves.
 
 ## Descripción
 
