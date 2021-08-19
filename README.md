@@ -1,6 +1,6 @@
 # Star Wars APP con Angular
 
-Esta app ha sido generada con [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.4 y consume la API [The Star Wars API](https://swapi.dev/) para mostrar información sobre las naves.
+Esta app ha sido generada con [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.4 y consume la API [The Star Wars API](https://swapi.dev/ "title" target="_blank") para mostrar información sobre las naves.
 
 ## Descripción
 
@@ -30,7 +30,7 @@ Esta app ha sido generada con [Angular CLI](https://github.com/angular/angular-c
 
 
 
-Versión subida en Netlify: [Star Wars APP](mcasal-swapi.netlify.app).<br/>
+Versión subida en Netlify: [Star Wars APP](https://mcasal-swapi.netlify.app/).<br/>
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/111c7401-090b-48a6-8a23-91325d8b9f1f/deploy-status)](https://app.netlify.com/sites/mcasal-swapi/deploys)
